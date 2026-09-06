@@ -1,19 +1,19 @@
-# 🧠 Student Social Media & Mental Health Score Predictor
+# Student Social Media & Mental Health Score Predictor
 
 A machine learning project that predicts a student's **Mental Health Score (0–10)** based on their social media usage habits and lifestyle. It ships with a **FastAPI prediction API** and a **Streamlit web UI**, and is deployable to [Render](https://render.com) in one click.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
-## 🔗 Live Demo
+## Live Demo
 
 | App | Link |
 |---|---|
-| 🖥️ **Streamlit UI** (try it here) | https://mental-health-ui-f8ap.onrender.com |
-| ⚙️ **FastAPI backend** (Swagger docs) | https://mental-health-api-ocho.onrender.com/docs |
+|  **Streamlit UI** (try it here) | https://mental-health-ui-f8ap.onrender.com |
+|  **FastAPI backend** (Swagger docs) | https://mental-health-api-ocho.onrender.com/docs |
 
-> ⚠️ Free tier: services sleep after ~15 min idle — the first request may take ~50 seconds to wake up.
+>  **Free tier:** services sleep after ~15 min idle — the first request may take ~50 seconds to wake up.
 
-## 📊 Model Performance
+## Model Performance
 
 The final model is a **Random Forest Regressor** (tuned with grid search):
 
@@ -24,7 +24,7 @@ The final model is a **Random Forest Regressor** (tuned with grid search):
 | Test RMSE | 0.345 |
 | CV R² (5-fold) | 0.898 |
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 Mental_Health_Score_Predictor/
@@ -46,7 +46,7 @@ Mental_Health_Score_Predictor/
 └── requirements.txt
 ```
 
-## 🔮 Features Used for Prediction
+## Features Used for Prediction
 
 | Feature | Type |
 |---|---|
@@ -56,7 +56,7 @@ Mental_Health_Score_Predictor/
 | `Study_Hours`, `Physical_Activity_Hours`, `Sleep_Hours_Per_Night` | Lifestyle |
 | `Stress_Level` (Low / Medium / High / Very High) | Ordinal |
 
-## 🚀 Run Locally
+## Run Locally
 
 ```bash
 # 1. Create a virtual environment
@@ -74,7 +74,7 @@ streamlit run app/streamlit_app.py
 - API docs (Swagger): http://127.0.0.1:8000/docs
 - Web UI: http://localhost:8501
 
-## 🔌 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -116,7 +116,7 @@ Example response:
 
 Inputs are auto-normalized (`"male"` → `"Male"`, `"high school"` → `"High School"`) and validated against the categories the model was trained on. If a number falls outside the training range, a warning is returned.
 
-## ☁️ Deploy to Render
+## Deploy to Render
 
 This repo includes a [`render.yaml`](render.yaml) blueprint that deploys **two free services**:
 
@@ -137,12 +137,12 @@ Click the **Deploy to Render** button at the top of this README, or:
 - **Free tier caveat:** services spin down after ~15 minutes of inactivity. The first request after idle takes ~50 seconds (cold start). If the UI shows a connection error on first load, refresh once the API wakes up.
 - The dataset CSVs are not committed (see `.gitignore`); the API reads its training ranges from `models/train_ranges.json`, so it runs without the data.
 
-## 📓 Notebooks
+## Notebooks
 
 1. `cleaning.ipynb` — load raw data, handle missing values/duplicates, encode targets
 2. `model_training.ipynb` — preprocessing pipeline + baseline model comparison
 3. `hyperparameter_tuning.ipynb` — grid search over Random Forest, final evaluation
 
-## 📄 License
+## License
 
 MIT
