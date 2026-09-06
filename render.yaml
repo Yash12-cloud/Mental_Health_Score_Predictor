@@ -1,0 +1,33 @@
+# Render Blueprint - deploys the FastAPI backend and the Streamlit UI.
+# Go to https://dashboard.render.com/select-repo -> "Blueprint" -> pick this repo.
+
+services:
+  # ---------- FastAPI prediction API ----------
+  - type: web
+    name: mental-health-api
+    runtime: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+
+  # ---------- Streamlit frontend ----------
+  - type: web
+    name: mental-health-ui
+    runtime: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r requirements.txt
+    # Streamlit needs its own port; $PORT is provided by Render
+    startCommand: streamlit run app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      # Public URL of the API service (set automatically after first deploy,
+      # or hardcode e.g. https://mental-health-api.onrender.com)
+      - key: API_URL
+        value: https://mental-health-api.onrender.com

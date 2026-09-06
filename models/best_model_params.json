@@ -1,0 +1,14 @@
+{
+  "best_cv_r2": 0.8976786680344505,
+  "test_r2": 0.933134322961016,
+  "test_mae": 0.2443064669510594,
+  "test_rmse": 0.34549841139131,
+  "params": {
+    "model__n_estimators": 100,
+    "model__min_samples_split": 2,
+    "model__min_samples_leaf": 1,
+    "model__max_features": 0.5,
+    "model__max_depth": 20,
+    "model__bootstrap": false
+  }
+}

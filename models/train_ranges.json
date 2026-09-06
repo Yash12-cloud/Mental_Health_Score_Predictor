@@ -1,0 +1,26 @@
+{
+  "Age": {
+    "min": 18.0,
+    "max": 24.0
+  },
+  "Avg_Daily_Usage_Hours": {
+    "min": 1.0,
+    "max": 8.8
+  },
+  "Daily_Unlocks": {
+    "min": 62.0,
+    "max": 273.0
+  },
+  "Study_Hours": {
+    "min": 0.3,
+    "max": 8.3
+  },
+  "Physical_Activity_Hours": {
+    "min": 0.0,
+    "max": 4.1
+  },
+  "Sleep_Hours_Per_Night": {
+    "min": 3.6,
+    "max": 9.9
+  }
+}
