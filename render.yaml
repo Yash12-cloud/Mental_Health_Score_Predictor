@@ -30,4 +30,4 @@ services:
       # Public URL of the API service (set automatically after first deploy,
       # or hardcode e.g. https://mental-health-api.onrender.com)
       - key: API_URL
-        value: https://mental-health-api.onrender.com
+        value: https://mental-health-api-ocho.onrender.com
