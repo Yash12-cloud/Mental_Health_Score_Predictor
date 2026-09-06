@@ -4,6 +4,15 @@ A machine learning project that predicts a student's **Mental Health Score (0–
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
+## 🔗 Live Demo
+
+| App | Link |
+|---|---|
+| 🖥️ **Streamlit UI** (try it here) | https://mental-health-ui-f8ap.onrender.com |
+| ⚙️ **FastAPI backend** (Swagger docs) | https://mental-health-api-ocho.onrender.com/docs |
+
+> ⚠️ Free tier: services sleep after ~15 min idle — the first request may take ~50 seconds to wake up.
+
 ## 📊 Model Performance
 
 The final model is a **Random Forest Regressor** (tuned with grid search):
@@ -124,7 +133,7 @@ Click the **Deploy to Render** button at the top of this README, or:
 
 ### Notes
 
-- The UI service assumes the API lives at `https://mental-health-api.onrender.com`. If Render renames the service (name taken), update the `API_URL` env var of the **mental-health-ui** service in the Render dashboard.
+- The UI service assumes the API lives at `https://mental-health-api-ocho.onrender.com`. If you redeploy under a different service name, update the `API_URL` env var of the **mental-health-ui** service in the Render dashboard.
 - **Free tier caveat:** services spin down after ~15 minutes of inactivity. The first request after idle takes ~50 seconds (cold start). If the UI shows a connection error on first load, refresh once the API wakes up.
 - The dataset CSVs are not committed (see `.gitignore`); the API reads its training ranges from `models/train_ranges.json`, so it runs without the data.
 
