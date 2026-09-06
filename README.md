@@ -24,6 +24,10 @@ The final model is a **Random Forest Regressor** (tuned with grid search):
 | Test RMSE | 0.345 |
 | CV R² (5-fold) | 0.898 |
 
+## Dataset
+
+[Student Social Media and Mental Health Impact](https://www.kaggle.com/datasets/shivasingh4945/student-social-media-and-mental-health-impact) (Kaggle) — survey data on students' social media usage and lifestyle. Download it and place the files in `data/raw/` to reproduce the notebooks.
+
 ## Project Structure
 
 ```
